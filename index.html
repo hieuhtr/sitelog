@@ -1,0 +1,32 @@
+---
+layout: default
+title: Hieu's blog
+---
+
+<div class="home">
+  <div class="post-list">
+
+    {% for post in site.posts limit:5%}
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h1 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+        <a class="post_date"> - {{ post.content | number_of_words | divided_by:180 | plus:1 }} min read</a>
+      </header>
+
+      <div class="post_excerpt" title="Read full article" onclick="window.open('{{ post.source }}', '_blank')" style="cursor: pointer;">
+        <p>
+          {{ post.excerpt }} 
+        </p> 
+      </div>
+
+      <footer class="post_meta">
+      </footer>
+      <hr/>
+    </article>
+    {% endfor %}
+
+    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> All posts</a></div>
+  </div>
+</div>
