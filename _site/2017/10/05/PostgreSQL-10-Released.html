@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>the front page of the internet</title>
-    <meta name="description" content="Log in or sign upWant to join?  Log in or sign up  in seconds.get the best of reddit, delivered once a week×My daughter loves Batman so a friend made a Batma...">
+    <title>PostgreSQL 10 Released</title>
+    <meta name="description" content="The PostgreSQL Global Development Group today announced the release of PostgreSQL 10, the latest version of the world’s most advanced open source database.A ...">
 
     <!-- todo: include this into main.css -->
 
     <link rel="stylesheet" href=" /css/main.css ">
-    <link rel="canonical" href="https://sitelog.llnx.me/2017/10/08/the-front-page-of-the-internet.html">
+    <link rel="canonical" href="https://sitelog.llnx.me/2017/10/05/PostgreSQL-10-Released.html">
     <link rel="alternate" type="application/rss+xml" title="The SiteLog" href="https://sitelog.llnx.me /feed.xml ">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script async src="https://sitelog.llnx.me/assets/dist/fetch.min.js"></script>
@@ -81,22 +81,38 @@
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="article_header">
-    <h1 class="post_title" itemprop="name headline">the front page of the internet</h1>
-    <time class="post_date">08 October 2017, Sunday</time>
-    <a class="post_date"> - 2 min read</a>
+    <h1 class="post_title" itemprop="name headline">PostgreSQL 10 Released</h1>
+    <time class="post_date">05 October 2017, Thursday</time>
+    <a class="post_date"> - 4 min read</a>
     <div class="issues" style="float: right">
       <a class="github-button" href="https://github.com/hieuhtr/Blog/issues" data-show-count="true" aria-label="Issue hieuhtr/Blog on GitHub">Explore</a>
     </div>
   </header>
 
   <div class="article-content" itemprop="articleBody">
-    <p>Log in or sign upWant to join?  Log in or sign up  in seconds.</p>
+    <p>The PostgreSQL Global Development Group today announced the release of PostgreSQL 10, the latest version of the world’s most advanced open source database.</p>
 
-<p>get the best of reddit, delivered once a week×</p>
+<p>A critical feature of modern workloads is the ability to distribute data across many nodes for faster access, management, and analysis, which is also known as a “divide and conquer” strategy. The PostgreSQL 10 release includes significant enhancements to effectively implement the divide and conquer strategy, including native logical replication, declarative table partitioning, and improved query parallelism.</p>
 
-<p>My daughter loves Batman so a friend made a Batman doll to look like her! (i.redd.it)Qui-Gon is the key to all of this (i.redd.it)The rare glimpse of a queen nursing her young (i.imgur.com)Internet speed guarantees must be realistic, says Ofcom - If the speed falls below the guaranteed minimum, under the new rules, the ISP will have one month to fix the problem, and if it cannot be fixed, the customer can terminate the contract without penalty [UK]Networking (bbc.co.uk)This boy has cerebral palsy and was told he would never walk. When his Marine dad returned from overseas, the boy walked to him (i.imgur.com)Drunk in a hammock. For every upvote I’ll swing back and fourth (i.redd.it)MRW the teacher says the tests were all A’s except one F/r/all (media.giphy.com)Anyone ever notice that Sleepy Hollow (1999) and Hot Fuzz (2007) have the same plot? Executed wildly different, of course. (self.movies)Nothing goes right for Kelly on those hangover morningsSoda Spirit (i.imgur.com)</p>
+<p>“Our developer community focused on building features that would take advantage of modern infrastructure setups for distributing workloads,” said Magnus Hagander, a core team member of the PostgreSQL Global Development Group. “Features such as logical replication and improved query parallelism represent years of work and demonstrate the continued dedication of the community to ensuring Postgres leadership as technology demands evolve.”</p>
 
-<p>π Rendered by PID 128806 on  app-308  at 2017-10-08 09:19:47.605107+00:00 running a20588b country code: VN.</p>
+<p>This release also marks the change of the versioning scheme for PostgreSQL to a “x.y” format.  This means the next minor release of PostgreSQL will be 10.1 and the next major release will be 11.</p>
+
+<p>Logical replication extends the current replication features of PostgreSQL with the ability to send modifications on a per-database and per-table level to different PostgreSQL databases.  Users can now fine-tune the data replicated to various database clusters and will have the ability to perform zero-downtime upgrades to future major PostgreSQL versions.</p>
+
+<p>“We have been heavily using PostgreSQL since 9.3 and are very excited about version 10 since it brings basis for long-awaited partitioning and built-in logical replication. It will allow us to use PostgreSQL in even more services,” said Vladimir Borodin, DBA Team Lead at Yandex.</p>
+
+<p>Table partitioning has existed for years in PostgreSQL but required a user to maintain a nontrivial set of rules and triggers for the partitioning to work.  PostgreSQL 10 introduces a table partitioning syntax that lets users easily create and maintain range and list partitioned tables.  The addition of the partitioning syntax is the first step in a series of planned features to provide a robust partitioning framework within PostgreSQL.</p>
+
+<p>PostgreSQL 10 provides better support for parallelized queries by allowing more parts of the query execution process to be parallelized.  Improvements include additional types of data scans that are parallelized as well as optimizations when the data is recombined, such as pre-sorting. These enhancements allow results to be returned more quickly.</p>
+
+<p>PostgreSQL 10 introduces quorum commit for synchronous replication, which allows for flexibility in how a primary database receives acknowledgement that changes were successfully written to remote replicas.  An administrator can now specify that if any number of replicas has acknowledged that a change to the database has been made, then the data can be considered safely written.</p>
+
+<p>“Quorum commit for synchronous replication in PostgreSQL 10 gives more options to extend our ability to promote database infrastructure with nearly zero downtime from the application perspective. This allows us to continuously deploy and update our database infrastructure without incurring long maintenance windows,” said Curt Micol, Staff Infrastructure Engineer at Simple Finance.</p>
+
+<p>The Salted Challenge Response Authentication Mechanism (SCRAM) defined in RFC5802 defines a protocol to improve upon the secure storage and transmission of passwords by providing a framework for strong password negotiation. PostgreSQL 10 introduces the SCRAM-SHA-256 authentication method, defined in RFC7677, to provide better security than the existing MD5-based password authentication method.</p>
+
+<p>PostgreSQL is the world’s most advanced open source database, with a global community of thousands of users, contributors, companies and organizations.  The PostgreSQL Project builds on over 30 years of engineering, starting at the University of California, Berkeley, and has continued with an unmatched pace of development. PostgreSQL’s mature feature set not only matches top proprietary database systems, but exceeds them in advanced database features, extensibility, security and stability.  Learn more about PostgreSQL and participate in our community at PostgreSQL.org.</p>
 
 <p><img src="" alt="" /></p>
 
