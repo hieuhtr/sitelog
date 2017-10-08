@@ -1,0 +1,21 @@
+---
+layout: post
+title: Security.txt
+source: https://securitytxt.org/
+category: 
+description: SiteLog - Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.
+numwords: 299
+---
+
+“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.”Read the Internet draft ➤
+
+What is the main purpose of security.txt?
+
+The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.
+
+security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: https://github.com/securitytxt/security-txt
+
+The current draft states that the security.txt file should ...
+
+![](https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png)
+<!--description-->

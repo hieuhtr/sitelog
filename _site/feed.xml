@@ -5,9 +5,49 @@
     <description>Log extraordinary sites.</description>
     <link>https://sitelog.llnx.me/</link>
     <atom:link href="https://sitelog.llnx.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Oct 2017 10:42:03 +0000</pubDate>
-    <lastBuildDate>Sun, 08 Oct 2017 10:42:03 +0000</lastBuildDate>
+    <pubDate>Sun, 08 Oct 2017 13:25:40 +0000</pubDate>
+    <lastBuildDate>Sun, 08 Oct 2017 13:25:40 +0000</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
+    
+      <item>
+        <title>Security.txt</title>
+        <description>&lt;p&gt;“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.”Read the Internet draft ➤&lt;/p&gt;
+
+&lt;p&gt;What is the main purpose of security.txt?&lt;/p&gt;
+
+&lt;p&gt;The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.&lt;/p&gt;
+
+&lt;p&gt;security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: https://github.com/securitytxt/security-txt&lt;/p&gt;
+
+&lt;p&gt;The current draft states that the security.txt file should …&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png&quot; alt=&quot;&quot; /&gt;
+&lt;!--description--&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
+        <link>https://sitelog.llnx.me/2017/10/08/Security.txt.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/08/Security.txt.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mathematical games interesting to both you and a 5+-year-old child</title>
+        <description>&lt;p&gt;There is an infinite indexed family of family-friendly, $\geq2$-player, perfect-information, draw-free-if-finite, cheap-to-construct, two-player combinatorial1, solved, sequential games, which are easily formalizable, have considerable mathematical substance, easily suggest open problems (both in the direction of exact analyses feasible even for children, and in the direction of inventing mathematically-informed heuristics) and have connections to classical graph theory (from any given position, solving ‘find a maximum matching’ is sufficient to decide who has a winning strategy from this position). They seem to fit the&lt;/p&gt;
+
+&lt;p&gt;Question: Do you have some experience/proposals of “games” which you can play with your children, which would be on the one hand would make some fun for them, on the other would somehow develop their logical/thinking/mathematical skills, and on the other hand would be of at least some interest for adult mathematicians ?&lt;/p&gt;
+
+&lt;p&gt;Thinking about it, I agree that ‘Set’ gives a ch…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn.sstatic.net/Sites/mathoverflow/img/apple-touch-icon@2.png?v=f1c9606b77ff&quot; alt=&quot;&quot; /&gt;
+&lt;!--description--&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Oct 2017 00:00:00 +0000</pubDate>
+        <link>https://sitelog.llnx.me/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>A Decade of Dynamo&amp;#58; Powering the next wave of high-performance, internet-scale applications</title>
@@ -28,14 +68,81 @@
       </item>
     
       <item>
+        <title>If macOS High Sierra shows your password instead of the password hint for an encrypted APFS volume</title>
+        <description>&lt;p&gt;If macOS High Sierra shows your password instead of the password hint for an encrypted APFS volume&lt;/p&gt;
+
+&lt;p&gt;Take steps to protect your data if you see your password instead of your password hint for an encrypted APFS volume.&lt;/p&gt;
+
+&lt;p&gt;Your password might be displayed instead of your password hint if you used the Add APFS Volume command in Disk Utility to create an encrypted APFS volume, and you supplied a password hint.&lt;/p&gt;
+
+&lt;p&gt;Changing the password on an affected volume clears the hint but doesn’t affect the underlying encryption keys that protect the data.&lt;/p&gt;
+
+&lt;p&gt;Apple recommends that you take these steps to guard the security of your data.&lt;/p&gt;
+
+&lt;p&gt;Encrypted APFS volumes that you created using any other method are not affected.&lt;/p&gt;
+
+&lt;p&gt;Follow these steps to update macOS High Sierra, and then back up, erase, and restore the encrypted APFS volume.&lt;/p&gt;
+
+&lt;p&gt;Install the macOS High Sierra 10.13 Supplemental Update from the App Store updates page.&lt;/p&gt;
+
+&lt;p&gt;Create an encypted backup of the data in your affected encrypted APFS volume.&lt;/p&gt;
+
+&lt;p&gt;Open Disk Util…&lt;/p&gt;
+
+&lt;!--description--&gt;
+</description>
+        <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+        <link>https://sitelog.llnx.me/2017/10/06/If-macOS-High-Sierra-shows-your-password-instead-of-the-password-hint-for-an-encrypted-APFS-volume.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/06/If-macOS-High-Sierra-shows-your-password-instead-of-the-password-hint-for-an-encrypted-APFS-volume.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>AIM will shut down after 20 years</title>
+        <description>&lt;p&gt;It’s a sad moment: AIM, AOL’s long-running instant messenger service that was core to many people’s first social experiences on the internet, will shut down once and for all on December 15th. AOL announced the shutdown today, acknowledging that people now communicate in new ways online, so AIM is no longer needed.&lt;/p&gt;
+
+&lt;p&gt;“AIM tapped into new digital technologies and ignited a cultural shift, but the way in which we communicate with each other has profoundly changed,” writes Michael Albers, communications products VP at Oath (the Verizon behemoth that consumed AOL).&lt;/p&gt;
+
+&lt;p&gt;AOL cut off access to AIM from third-party chat clients back in March, hinting at this eventual shutdown. It’s hard to imagine that many people are still using AIM, so that change, nor this upcoming shutdown, are likely to make a huge difference.&lt;/p&gt;
+
+&lt;p&gt;AIM was one of the first and most successful instant messengers, widely used in the late ‘90s and even throughout the 2000s. I was still using AIM to chat with my friends throughout col…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn0.vox-cdn.com/thumbor/KV4BtqsztjfW0GMR59H5lPVYCcs=/0x19:998x542/fit-in/1200x630/cdn0.vox-cdn.com/uploads/chorus_asset/file/9405823/Screen_Shot_2017_10_06_at_10.06.22_AM.png&quot; alt=&quot;&quot; /&gt;
+&lt;!--description--&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+        <link>https://sitelog.llnx.me/2017/10/06/AIM-will-shut-down-after-20-years.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/06/AIM-will-shut-down-after-20-years.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>iOS 11’s Misleading “Off-ish” Setting for Bluetooth and Wi-Fi is Bad for User Security</title>
+        <description>&lt;p&gt;Turning off your Bluetooth and Wi-Fi radios when you’re not using them is good security practice (not to mention good for your battery usage). When you consider Bluetooth’s known vulnerabilities, it’s especially important to make sure your Bluetooth and Wi-Fi settings are doing what you want them to. The iPhone’s newest operating system, however, makes it harder for users to control these settings.&lt;/p&gt;
+
+&lt;p&gt;On an iPhone, users might instinctively swipe up to open Control Center and toggle Wi-Fi and Bluetooth off from the quick settings. Each icon switches from blue to gray, leading a user to reasonably believe they have been turned off—in other words, fully disabled. In iOS 10, that was true. However, in iOS 11, the same setting change no longer actually turns Wi-Fi or Bluetooth  “off.”&lt;/p&gt;
+
+&lt;p&gt;Instead, what actually happens in iOS 11 when you toggle your quick settings to “off” is that the phone will disconnect from Wi-Fi networks and some devices, but remain on for Apple services. Location Services…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.eff.org/files/issues/icon-security-1.png&quot; alt=&quot;&quot; /&gt;
+&lt;!--description--&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 Oct 2017 00:00:00 +0000</pubDate>
+        <link>https://sitelog.llnx.me/2017/10/05/iOS-11-s-Misleading-Off-ish-Setting-for-Bluetooth-and-Wi-Fi-is-Bad-for-User-Security.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/05/iOS-11-s-Misleading-Off-ish-Setting-for-Bluetooth-and-Wi-Fi-is-Bad-for-User-Security.html</guid>
+        
+        
+      </item>
+    
+      <item>
         <title>PostgreSQL 10 Released</title>
         <description>&lt;p&gt;The PostgreSQL Global Development Group today announced the release of PostgreSQL 10, the latest version of the world’s most advanced open source database.&lt;/p&gt;
 
 &lt;p&gt;A critical feature of modern workloads is the ability to distribute data across many nodes for faster access, management, and analysis, which is also known as a “divide and conquer” strategy. The PostgreSQL 10 release includes significant enhancements to effectively implement the divide and conquer strategy, including native logical replication, declarative table partitioning, and improved query parallelism.&lt;/p&gt;
 
 &lt;p&gt;“Our developer community focused on building features that would take advantage of modern infrastructure setups for distributing workloads,” said Magnus Hagander, a core team member of the PostgreSQL Global Development Group. “Features such as logical replication and improved query parallelism represent years of work and demonstrate the continued dedication of the community to ensuring Postgres leadership as technology demands…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;!--description--&gt;
 </description>
@@ -47,19 +154,18 @@
       </item>
     
       <item>
-        <title>Init simple log</title>
-        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#understanding-top-command&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt; is a monitoring program which is used frequently for tracking process’s resource usage and its activity in &lt;strong&gt;real-time&lt;/strong&gt;, show current tasks being serviced by the kernel, help &lt;strong&gt;discovering&lt;/strong&gt; and &lt;strong&gt;diagnosing&lt;/strong&gt; overload or capacity of system by seeing &lt;strong&gt;CPU &amp;amp; Mem usage&lt;/strong&gt;. It’s available under many Unix/Linux operating systems.&lt;/p&gt;
+        <title>Yahoo Triples Estimate of Breached Accounts to 3 Billion</title>
+        <description>&lt;p&gt;A massive data breach at Yahoo in 2013 was far more extensive than previously disclosed, affecting all of its 3 billion user accounts, new parent company Verizon Communications Inc. said on Tuesday.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/top-command-optimized.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The figure, which Verizon said was based on new information, is three times the 1 billion accounts Yahoo said were affected when it first disclosed the breach in December 2016. The new disclosure, four months after Verizon completed its acquisition of Yahoo, shows that executives are still coming to grips with the extent of the……&lt;/p&gt;
 
-&lt;!--description--&gt;
+&lt;p&gt;&lt;img src=&quot;https://si.wsj.net/public/resources/images/BN-VK323_36H0g_TOP_20171003155917.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
-        <link>https://sitelog.llnx.me/technical/2017/10/04/Init-simple-log.html</link>
-        <guid isPermaLink="true">https://sitelog.llnx.me/technical/2017/10/04/Init-simple-log.html</guid>
+        <link>https://sitelog.llnx.me/2017/10/04/Yahoo-Triples-Estimate-of-Breached-Accounts-to-3-Billion.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/2017/10/04/Yahoo-Triples-Estimate-of-Breached-Accounts-to-3-Billion.html</guid>
         
-        
-        <category>technical</category>
         
       </item>
     

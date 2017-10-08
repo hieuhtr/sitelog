@@ -4,6 +4,7 @@ title: A Decade of Dynamo&#58; Powering the next wave of high-performance, inter
 source: http://www.allthingsdistributed.com/2017/10/a-decade-of-dynamo.html
 category: 
 description: SiteLog - A Decade of Dynamo&#58; Powering the next wave of high-performance, internet-scale applications
+numwords: 1380
 ---
 
 Today marks the 10 year anniversary of Amazon's Dynamo whitepaper, a milestone that made me reflect on how much innovation has occurred in the area of databases over the last decade and a good reminder on why taking a customer obsessed approach to solving hard problems can have lasting impact beyond your original expectations.
