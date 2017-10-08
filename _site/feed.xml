@@ -5,12 +5,12 @@
     <description>Log extraordinary sites.</description>
     <link>https://sitelog.llnx.me/</link>
     <atom:link href="https://sitelog.llnx.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Oct 2017 10:19:59 +0000</pubDate>
-    <lastBuildDate>Sun, 08 Oct 2017 10:19:59 +0000</lastBuildDate>
+    <pubDate>Sun, 08 Oct 2017 10:26:43 +0000</pubDate>
+    <lastBuildDate>Sun, 08 Oct 2017 10:26:43 +0000</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
     
       <item>
-        <title>A Decade of Dynamo Powering the next wave of high-performance, internet-scale applications</title>
+        <title>A Decade of Dynamo&amp;#58; Powering the next wave of high-performance, internet-scale applications</title>
         <description>&lt;p&gt;Today marks the 10 year anniversary of Amazon’s Dynamo whitepaper, a milestone that made me reflect on how much innovation has occurred in the area of databases over the last decade and a good reminder on why taking a customer obsessed approach to solving hard problems can have lasting impact beyond your original expectations.&lt;/p&gt;
 
 &lt;p&gt;It all started in 2004 when Amazon was running Oracle’s enterprise edition with clustering and replication. We had an advanced team of database administrators and access to top experts within Oracle. We were pushing the limits of what was a leading commercial database at the time and were unable to sustain the availability, scalability and performance needs that our growing Amazon business demanded.&lt;/p&gt;
