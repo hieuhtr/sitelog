@@ -2,7 +2,7 @@
 layout: post
 title: Interactive Vim tutorial
 source: http://www.openvim.com/
-category: 
+category: HackerNews
 description: SiteLog - Interactive Vim tutorial
 numwords: 14
 ---

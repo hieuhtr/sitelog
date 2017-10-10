@@ -2,7 +2,7 @@
 layout: post
 title: PostgreSQL 10 Released
 source: https://www.postgresql.org/about/news/1786/
-category: 
+category: HackerNews
 description: SiteLog - PostgreSQL 10 Released
 numwords: 628
 ---

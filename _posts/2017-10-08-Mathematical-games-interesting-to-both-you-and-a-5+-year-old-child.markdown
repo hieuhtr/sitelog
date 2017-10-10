@@ -2,7 +2,7 @@
 layout: post
 title: Mathematical games interesting to both you and a 5+-year-old child
 source: https://mathoverflow.net/questions/281447/mathematical-games-interesting-to-both-you-and-a-5-year-old-child
-category: 
+category: HackerNews
 description: SiteLog - Background&#58; My daughter is 6 years old now, once I wanted to  think on some math (about some Young diagrams), but she wanted to play with me...  How to make
 numwords: 3366
 ---

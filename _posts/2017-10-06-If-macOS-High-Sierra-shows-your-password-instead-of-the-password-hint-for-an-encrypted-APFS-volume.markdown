@@ -2,7 +2,7 @@
 layout: post
 title: If macOS High Sierra shows your password instead of the password hint for an encrypted APFS volume
 source: https://support.apple.com/en-us/HT208168
-category: 
+category: HackerNews
 description: SiteLog - Take steps to protect your data if you see your password instead of your password hint for an encrypted APFS volume.
 numwords: 314
 ---

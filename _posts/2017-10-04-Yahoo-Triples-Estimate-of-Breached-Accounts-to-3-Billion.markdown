@@ -2,7 +2,7 @@
 layout: post
 title: Yahoo Triples Estimate of Breached Accounts to 3 Billion
 source: https://www.wsj.com/articles/yahoo-triples-estimate-of-breached-accounts-to-3-billion-1507062804
-category: 
+category: HackerNews
 description: SiteLog - A massive data breach at Yahoo in 2013 was far more extensive than previously disclosed, affecting all of its 3 billion user accounts, its parent company Verizon said.
 numwords: 86
 ---

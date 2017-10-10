@@ -2,7 +2,7 @@
 layout: post
 title: the tech insiders who fear a smartphone dystopia
 source: https://www.theguardian.com/technology/2017/oct/05/smartphone-addiction-silicon-valley-dystopia
-category: 
+category: HackerNews
 description: SiteLog - The Google, Apple and Facebook workers who helped make technology so addictive are disconnecting themselves from the internet. Paul Lewis reports on the Silicon
 numwords: 4215
 ---

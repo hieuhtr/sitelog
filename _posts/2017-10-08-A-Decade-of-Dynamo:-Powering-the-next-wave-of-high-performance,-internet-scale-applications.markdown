@@ -2,7 +2,7 @@
 layout: post
 title: A Decade of Dynamo&#58; Powering the next wave of high-performance, internet-scale applications
 source: http://www.allthingsdistributed.com/2017/10/a-decade-of-dynamo.html
-category: 
+category: HackerNews
 description: SiteLog - A Decade of Dynamo&#58; Powering the next wave of high-performance, internet-scale applications
 numwords: 1380
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: AIM will shut down after 20 years
 source: https://www.theverge.com/2017/10/6/16435690/aim-shutting-down-after-20-years-aol-instant-messenger
-category: 
+category: HackerNews
 description: SiteLog - It’s a sad moment&#58; AIM, AOL’s long-running instant messenger service that was core to many people’s first social experiences on the internet, will shut down once and for all on December 15th. AOL...
 numwords: 338
 ---

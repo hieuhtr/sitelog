@@ -2,7 +2,7 @@
 layout: post
 title: Security.txt
 source: https://securitytxt.org/
-category: 
+category: HackerNews
 description: SiteLog - Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.
 numwords: 299
 ---

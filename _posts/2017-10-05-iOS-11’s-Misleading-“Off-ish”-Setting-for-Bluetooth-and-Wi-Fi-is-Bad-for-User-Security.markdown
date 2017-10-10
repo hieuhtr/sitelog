@@ -2,7 +2,7 @@
 layout: post
 title: iOS 11’s Misleading “Off-ish” Setting for Bluetooth and Wi-Fi is Bad for User Security
 source: https://www.eff.org/deeplinks/2017/10/ios-11s-misleading-ish-setting-bluetooth-and-wi-fi-bad-user-security
-category: 
+category: HackerNews
 description: SiteLog - Turning off your Bluetooth and Wi-Fi radios when you’re not using them is good security practice (not to mention good for your battery usage). When you consider Bluetooth’s known vulnerabilities, it’s especially important to make sure your Bluetooth and Wi-Fi settings are doing what you want them...
 numwords: 472
 ---
