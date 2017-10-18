@@ -16,9 +16,8 @@ title: Archive
     {% for post in category.last %}
 
     <div class="post_title">
+      <span class="date">[{{ post.date | date: "%b %d, %y" }}] </span>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
-      <span class="date">{{ post.date | date: "%-d %b, %Y" }}</span>
-      <span class="date"> - {{ post.numwords | divided_by:180 | plus:1 }} min read</span>
     </div>
 
     {% endfor %}
