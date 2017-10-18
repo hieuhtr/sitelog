@@ -3,10 +3,10 @@
   <channel>
     <title>The SiteLog</title>
     <description>Log extraordinary sites.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Oct 2017 22:03:31 +0700</pubDate>
-    <lastBuildDate>Wed, 18 Oct 2017 22:03:31 +0700</lastBuildDate>
+    <link>https://sitelog.llnx.me/</link>
+    <atom:link href="https://sitelog.llnx.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 18 Oct 2017 22:06:20 +0700</pubDate>
+    <lastBuildDate>Wed, 18 Oct 2017 22:06:20 +0700</lastBuildDate>
     <generator>Jekyll v3.5.1</generator>
     
       <item>
@@ -25,8 +25,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/12/Firefox-Send.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/12/Firefox-Send.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/12/Firefox-Send.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/12/Firefox-Send.html</guid>
         
         
         <category>HackerNews</category>
@@ -47,8 +47,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/12/Building-command-line-tools-with-Node.js.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/12/Building-command-line-tools-with-Node.js.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/12/Building-command-line-tools-with-Node.js.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/12/Building-command-line-tools-with-Node.js.html</guid>
         
         
         <category>HackerNews</category>
@@ -69,8 +69,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/12/Ansible-open-sources-Ansible-Tower-with-AWX.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/12/Ansible-open-sources-Ansible-Tower-with-AWX.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/12/Ansible-open-sources-Ansible-Tower-with-AWX.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/12/Ansible-open-sources-Ansible-Tower-with-AWX.html</guid>
         
         
         <category>HackerNews</category>
@@ -100,8 +100,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/12/An-introduction-for-developers.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/12/An-introduction-for-developers.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/12/An-introduction-for-developers.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/12/An-introduction-for-developers.html</guid>
         
         
         <category>HackerNews</category>
@@ -118,8 +118,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/09/Sorting-Visualizations.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/09/Sorting-Visualizations.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/09/Sorting-Visualizations.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/09/Sorting-Visualizations.html</guid>
         
         
         <category>HackerNews</category>
@@ -134,8 +134,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/09/Interactive-Vim-tutorial.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/09/Interactive-Vim-tutorial.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/09/Interactive-Vim-tutorial.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/09/Interactive-Vim-tutorial.html</guid>
         
         
         <category>HackerNews</category>
@@ -158,8 +158,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/08/Security.txt.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/08/Security.txt.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/08/Security.txt.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/08/Security.txt.html</guid>
         
         
         <category>HackerNews</category>
@@ -178,8 +178,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/08/Mathematical-games-interesting-to-both-you-and-a-5+-year-old-child.html</guid>
         
         
         <category>HackerNews</category>
@@ -198,8 +198,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/08/A-Decade-of-Dynamo-Powering-the-next-wave-of-high-performance,-internet-scale-applications.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/08/A-Decade-of-Dynamo-Powering-the-next-wave-of-high-performance,-internet-scale-applications.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/08/A-Decade-of-Dynamo-Powering-the-next-wave-of-high-performance,-internet-scale-applications.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/08/A-Decade-of-Dynamo-Powering-the-next-wave-of-high-performance,-internet-scale-applications.html</guid>
         
         
         <category>HackerNews</category>
@@ -220,8 +220,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/06/the-tech-insiders-who-fear-a-smartphone-dystopia.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/06/the-tech-insiders-who-fear-a-smartphone-dystopia.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/06/the-tech-insiders-who-fear-a-smartphone-dystopia.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/06/the-tech-insiders-who-fear-a-smartphone-dystopia.html</guid>
         
         
         <category>HackerNews</category>
