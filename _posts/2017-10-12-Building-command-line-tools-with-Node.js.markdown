@@ -5,6 +5,7 @@ source: https://developer.atlassian.com/blog/2015/11/scripting-with-node/
 category: HackerNews
 description: SiteLog - I've written hundreds of Bash scripts over my career, but I still suck at Bash. I have to look up the syntax for simple logical structures every single time. If
 numwords: 1849
+hnscore: 599
 ---
 
 I've written hundreds of Bash scripts over my career, but I still suck at Bash. I have to look up the syntax for simple logical structures every single time. If I want to do anything fancy with curl or sed, I have to go and look up man pages too. I spend hours brute forcing every possible combination of single and double quotes and escaping and double-escaping every character in my regular expressions until I get something that looks like abstract ASCII art, all while trying to remember the difference between grep and perl regular expressions.
