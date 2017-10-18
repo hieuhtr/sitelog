@@ -1032,7 +1032,8 @@ input#menu-toggle {
           fill: #424242; } }
 
 .site-header {
-  text-align: right; }
+  text-align: center;
+  margin-left: 0px; }
   @media screen and (max-width: 780px) {
     .site-header {
       text-align: center;
@@ -1136,9 +1137,10 @@ body.custom-background {
 
 /* Archive page */
 .archive_list {
-  margin-left: 2%;
+  margin-left: 1%;
   width: 100%;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  font-size: 95%; }
 
 .category-name {
   padding-top: 20px;

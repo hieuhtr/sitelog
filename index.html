@@ -6,11 +6,11 @@ title: SiteLog
 <div class="home">
   <div class="post-list">
 
-    {% for post in site.posts limit:30%}
+    {% for post in site.posts limit:5 offset:0 %}
 
     <article class="post_card post">
       <header class="post_header">
-        <h1 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <h1 class="post_title"><a href="{{ post.source }}">{{ post.title}}</a></h2>
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
         <a class="post_date"> - {{ post.numwords | divided_by:180 | plus:1 }} min read</a>
         <a class="post_date"> - {{ post.hnscore }} upvote</a>

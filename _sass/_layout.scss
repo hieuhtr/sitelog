@@ -171,7 +171,8 @@ input#menu-toggle {
 
 
 .site-header {
-  text-align:right;
+  text-align:center;
+  margin-left: 0px;
   @include media-query($on-laptop){
     text-align: center;
     margin-bottom: 40px;
@@ -347,7 +348,7 @@ body.custom-background {
   margin-left: 1%;
   width: 100%;
   margin-bottom: 3rem;
-  font-size: 90%;
+  font-size: 95%;
 }
 
 .category-name {

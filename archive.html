@@ -17,7 +17,7 @@ title: Archive
 
     <div class="post_title">
       <span class="date">[{{ post.date | date: "%Y-%m-%d" }}] </span>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
+      <a onclick="window.open('{{ post.source }}', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">{{ post.title}}</a>
     </div>
 
     {% endfor %}
