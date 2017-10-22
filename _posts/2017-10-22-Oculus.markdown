@@ -1,0 +1,14 @@
+---
+layout: post
+title: Oculus
+source: https://www.facebook.com/oculusvr/videos/vb.270208243080697/1189602884474557/?type=3&theater
+category: HackerNews
+description: SiteLog - Tune in to hear John Carmack, Oculus CTO, talk about the state of mobile VR and more!
+numwords: 16
+hnscore: 
+---
+
+See more of Oculus on FacebookLog InCreate New AccountSee more of Oculus on FacebookCreate New Account...
+
+![](https://fb-s-b-a.akamaihd.net/h-ak-fbx/v/t15.0-10/s640x640/22507921_1190324367735742_5569548503794843648_n.jpg?oh=311fb95ad54ad3ffade7fcdf30739af5&oe=5AAF4082&__gda__=1517427011_22afc1c82ec5779127e57e03586c93fa)
+<!--description-->

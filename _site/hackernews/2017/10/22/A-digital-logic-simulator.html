@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>A digital logic simulator</title>
+    <meta name="description" content="Dear BOOLR users,  Last year we wanted to make a working computer in a simulator for a school project.  We had learned something about digital logic, and we ...">
+
+    <!-- todo: include this into main.css -->
+
+    <link rel="stylesheet" href=" /css/main.css ">
+    <link rel="canonical" href="http://localhost:4000/hackernews/2017/10/22/A-digital-logic-simulator.html">
+    <link rel="alternate" type="application/rss+xml" title="The SiteLog" href="http://localhost:4000 /feed.xml ">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async src="http://localhost:4000/assets/dist/fetch.min.js"></script>
+    <script src="http://localhost:4000/assets/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="http://localhost:4000/assets/dist/github-calendar.css" />
+    <script src="http://localhost:4000/assets/dist/pace.min.js"></script>
+    <link href="http://localhost:4000/assets/dist/pace.css" rel="stylesheet" />
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-76496708-3', 'auto');
+        ga('send', 'pageview');
+        ga('set', 'userId', {
+            {
+                USER_ID
+            }
+        }); // Set the user ID using signed-in user_id.
+    </script>
+</head>
+  <body>
+    <div class="page-content">
+      <div class="container">
+        <div class="three columns">
+          <header class="site-header">
+  <h1>
+    <a href=" / ">HOME </a>
+    <a href=" /archive ">ARCHIVE </a>
+    <a href=" /about ">ABOUT</a>
+  </h1>
+</header>
+
+<br>
+
+<div class="site-nav">
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://zsync.moria.org.uk/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">zsync</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://qutebrowser.org', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">qutebrowser</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://louis.center/p2p-social-networking/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">p2p social networking with Rotonde & Beaker Browser</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://micro-frontends.org/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">extending the microservice idea to frontend development</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://twitter.com/congressedits', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">congress-edits (@congressedits)</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.washingtonpost.com/news/posteverything/wp/2017/10/17/my-google-job-was-tedious-and-pointless/?tid=hybrid_collaborative_1_na&utm_term=.fc2705c5456a', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Working at Google seemed like a dream job. The reality has been a tedious, pointless nightmare.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://moreisdifferent.com/2015/07/16/why-physicsts-still-use-fortran/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Why physicists still use Fortran</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://dubst3pp4.github.io/post/2017-10-03-why-i-use-object-pascal/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Why I use Object Pascal</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://justgetflux.com/news/pages/v4/bigupdate/?v=4.55', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Welcome to f.lux v4</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://crocs.fi.muni.cz/public/papers/rsa_ccs17', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Vulnerable RSA generation (CVE-2017-15361) [CRoCS wiki]</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://googleprojectzero.blogspot.com/2017/10/over-air-vol-2-pt-3-exploiting-wi-fi.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Vol. 2, Pt. 3&#58; Exploiting The Wi-Fi Stack on Apple Devices</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://lwn.net/SubscriberLink/735973/17bdb163fddd41ae/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The trouble with text-only email [LWN.net]</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.faxrocket.com/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The easiest way to send a fax</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.bbc.co.uk/news/resources/idt-sh/Thoughts_Chairman_Xi', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Thoughts of Chairman Xi</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.newyorker.com/magazine/2017/10/16/the-secret-lives-of-leonardo-da-vinci', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Secret Lives of Leonardo da Vinci</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://python-graph-gallery.com/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Python Graph Gallery</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://priceonomics.com/the-inventor-of-auto-tune/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Mathematical Genius of Auto-Tune</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.reuters.com/article/us-tesla-jobs/tesla-fired-hundreds-of-employees-in-past-week-idUSKBN1CJ00L', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Tesla fired hundreds of employees in past week</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://tpapp.github.io/post/common-lisp-to-julia/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Switching from Common Lisp to Julia</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://twitter.com/stephenniem/status/919897406031978496', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Stephennie Mulder on Twitter</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://incoherency.co.uk/blog/stories/hidden-service-phishing.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Someone Created a Tor Hidden Service to Phish my Tor Hidden Service</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://phys.org/news/2017-10-scientists-periodic-orbits-famous-three-body.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Scientists discover more than 600 new periodic orbits of the famous three-body problem</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://cternus.net/blog/2017/10/10/questions-i-m-asking-in-interviews-2017/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Questions I'm asking in interviews 2017</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blogs.dropbox.com/dropbox/2017/10/new-plan-dropbox-professional/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Powerful tools to showcase your work</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://programmingdesignsystems.com/color/perceptually-uniform-color-spaces/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Perceptually uniform color spaces</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.decisionproblem.com/paperclips/index2.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Paperclips</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.facebook.com/notes/kent-beck/over-qualification-wut/1671791376187053/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Over-Qualification, Wut?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://osgameclones.com/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Open Source Game Clones</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://nextjournal.com/dubroy/ohm-parsing-made-easy', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Ohm&#58; Parsing Made Easy</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.facebook.com/oculusvr/videos/vb.270208243080697/1189602884474557/?type=3&theater', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Oculus</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://cs.yale.edu/homes/aspnes/classes/223/notes.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Notes on Data Structures and Programming Techniques (CPSC 223, Spring 2015)</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.planetizen.com/features/95227-new-research-how-ride-hailing-impacts-travel-behavior', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">New Research on How Ride-Hailing Impacts Travel Behavior</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://varun.ca/metaballs', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Metaballs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.washingtonpost.com/news/wonk/wp/2017/10/16/legal-marijuana-is-saving-lives-in-colorado-study-finds/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Legal marijuana is saving lives in Colorado, study finds</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://oneupsecurity.com/research/five-minute-guide-to-software-security?tr=hn', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Learn To Develop Secure Software</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.visual-memory.co.uk/amk/doc/0069.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Kubrick's Interview by Joseph Gelmis</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://danluu.com/keyboard-latency/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Keyboard latency</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://uss-la-ca135.org/60/1960Judkins-Knott.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Jud! You are on fire</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://mobile.nytimes.com/2017/10/12/science/jeremy-lefty-snail.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Jeremy the Lefty Snail Is Dead. His Offspring Are All Right.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://profsjt.blogspot.com/2017/10/is-haskell-right-language-for-teaching.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Is Haskell the right language for teaching functional programming principles?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.righto.com/2017/10/inside-vintage-xerox-altos-display-tiny.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Inside the vintage Xerox Alto's display, a tiny lightbulb keeps it working</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.wsgr.com/WSGR/Display.aspx?SectionName=publications/PDFSearch/wsgralert-initial-coin-offerings-1017.htm', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">ICOs at the End of 2017&#58; What We Think We Know and What We Don't Know</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://simonwillison.net/2017/Oct/17/free-continuous-deployment/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">How to set up world-class continuous deployment using free hosted tools</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://coursetro.com/posts/other/95/MailChimp-vs.-Amazon-SES---How-I-Reduced-My-Monthly-Bill-by-92%', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">How I Reduced My Monthly Bill by 92%</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.bloomberg.com/features/apple-iphone-guts/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Here’s a Detailed Look at What's Inside an iPhone</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.hashicorp.com/blog/hashicorp-consul-1-0/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">HashiCorp Consul 1.0</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://handmadehero.org/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Handmade Hero</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arxiv.org/abs/1710.05468', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Generalization in Deep Learning</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://projects.propublica.org/graphics/harvey-reservoirs', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Everyone knew Houston’s reservoirs would flood — except for the people who bought homes inside them</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://cslibrary.stanford.edu/101/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Essential C</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.reuters.com/article/us-equifax-breach/equifax-takes-down-web-page-after-reports-of-new-hack-idUSKBN1CH2F3', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Equifax says systems not compromised in latest cyber scare</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://eloquentjavascript.net/3rd_edition/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Eloquent JavaScript Third Edition</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://gamehistory.org/aladdin-source-code/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Digging for treasure in Aladdin’s source code – Video Game History Foundation</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.bbc.co.uk/news/resources/idt-sh/death_of_the_nile', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Death of the Nile</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.interviewcake.com/data-structures-and-algorithms-guide', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Data Structures and Algorithms (DSA)&#58; The Intuitive Guide</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.cs.usfca.edu/~galles/visualization/Algorithms.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Data Structure Visualization</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://alpha.cryptokitties.co/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">CryptoKitties</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.craigkerstiens.com/2017/10/12/dear-postgres/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Craig Kerstiens</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Colorizing B&W Photos with Neural Networks</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.krackattacks.com/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Breaking WPA2</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://apnews.com/eec3f8b5b9274e7e8e7545136b809c94/Bomb-kills-reporter-who-covered-Malta%27s-%27Panama-Papers%27-link?utm_campaign=SocialFlow&utm_source=Twitter&utm_medium=AP', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Bomb kills journalist who exposed Malta's ties to tax havens</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://news.ycombinator.com/item?id=15480233', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Ask HN&#58; How do I find meaningful work?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://news.ycombinator.com/item?id=15463612', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Ask HN&#58; Developers who became engineering managers, how was the experience?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://news.ycombinator.com/item?id=15465252', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Ask HN&#58; Are Glassdoor reviews a reliable indicator of a company's culture?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.rust-lang.org/2017/10/12/Rust-1.21.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Announcing Rust 1.21</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://microsoft.github.io/ELL/tutorials/Active-cooling-your-Raspberry-Pi-3/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Active cooling your Raspberry Pi 3</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://letsencrypt.org/2017/10/17/acme-support-in-apache-httpd.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">ACME Support in Apache HTTP Server Project</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://ag.ny.gov/press-release/ag-schneiderman-announces-375000-settlement-flatiron-computer-coding-school-operating', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">A.G. Schneiderman Announces $375,000 Settlement With Flatiron Computer Coding School For Operating Without A License And For Its Employment And Salary Claims</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://boolr.me', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">A digital logic simulator</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.sciencealert.com/a-nine-year-study-has-just-shown-how-sugar-exacerbates-cancer', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">526&#58; Invalid SSL certificate</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techiedelight.quora.com/500-Data-Structures-and-Algorithms-practice-problems-and-their-solutions?__filter__&__nsrc__=2&__snid3__=1594232728&amp;share=1', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">500 Data Structures and Algorithms practice pro...</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://ziglang.org/download/0.1.1/release-notes.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">0.1.1 Release Notes · The Zig Programming Language</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://github.com/josephernest/writing', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;"></a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/17/uk-spies-using-social-media-data-for-mass-surveillance/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">UK spies using social media data for mass surveillance</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/12/google-commits-1-billion-in-grants-to-train-u-s-workers-for-high-tech-jobs/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Google commits $1 billion in grants to train U.S. workers for high-tech jobs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/16/facebook-acquires-anonymous-teen-compliment-app-tbh-will-let-it-run/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Facebook acquires anonymous teen compliment app tbh, will let it run</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/13/steve-wozniak-announces-tech-education-platform-woz-u/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Steve Wozniak announces tech education platform Woz U</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/13/ign-acquires-pay-what-you-want-game-shop-humble-bundle/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">IGN acquires pay-what-you-want game shop Humble Bundle</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://techcrunch.com/2017/10/12/hyperloop-one-becomes-virgin-hyperloop-one-with-virgin-group-investment/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Hyperloop One becomes ‘Virgin Hyperloop One’ with Virgin Group investment</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.dragonflybsd.org/release50/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">release50</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.crowdedcities.com', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Home</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.blog.google/products/g-suite/time-refresh-introducing-new-look-and-features-google-calendar-web/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">meet the new Google Calendar for web</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://getstream.io/blog/switched-python-go/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Why we switched from Python to Go</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.wepay.com/2017/10/17/wepays-next-chapter/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">WePay’s Next Chapter</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arstechnica.com/gadgets/2017/10/the-pixel-2-contains-a-custom-google-soc-the-pixel-visual-core/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Surprise! The Pixel 2 is hiding a custom Google SoC for image processing</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blogs.windows.com/devices/2017/10/17/introducing-surface-book-2-the-most-powerful-surface-book-ever/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Introducing Surface Book 2, the most powerful Surface Book ever</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://simonmar.github.io/posts/2017-10-17-hotswapping-haskell.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Hotswapping Haskell</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.wired.com/story/google-advanced-protection-locks-down-accounts', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Google's 'Advanced Protection' Locks Down Accounts Like Never Before</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://cloudplatform.googleblog.com/2017/10/API-design-choosing-between-names-and-identifiers-in-URLs.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Choosing between names and identifiers in URLs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theverge.com/2017/10/17/16488942/alphabet-sidewalk-labs-toronto-quayside', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Alphabet’s Sidewalk Labs strikes deal to turn 800 acres of Toronto into an ‘internet city’</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://daniel.haxx.se/blog/2017/10/16/polhemspriset-2017/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">daniel.haxx.se</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.bloomberg.com/news/features/2017-10-16/black-monday-at-30-wall-street-remembers-the-1987-stock-market-crash', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Wall Street Revisits the Crash of '87</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.bbc.com/future/story/20171016-the-great-thaw-of-americas-north-is-coming', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The great thaw of America’s north is coming</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.fastcompany.com/3065928/sleepopolis-casper-bloggers-lawsuits-underside-of-the-mattress-wars', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The War To Sell You A Mattress Is An Internet Nightmare</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.bloomberg.com/view/articles/2017-10-16/the-long-term-stock-exchange-is-worth-a-shot', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Long-Term Stock Exchange Is Worth a Shot</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.blog.google/products/maps/space-out-planets-google-maps/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Space out with planets in Google Maps</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arstechnica.com/information-technology/2017/10/severe-flaw-in-wpa2-protocol-leaves-wi-fi-traffic-open-to-eavesdropping/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Serious flaw in WPA2 protocol lets attackers intercept passwords and much more</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arstechnica.com/science/2017/10/ophelia-became-a-major-hurricane-where-the-waters-are-usually-too-cold/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Ophelia became a major hurricane where no storm had before</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theguardian.com/world/2017/oct/16/malta-car-bomb-kills-panama-papers-journalist', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Malta car bomb kills Panama Papers journalist</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.docker.com/kubernetes', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Kubernetes</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://thereformedbroker.com/2017/10/16/just-own-the-damn-robots/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Just own the damn robots.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.yubico.com/2017/10/infineon-rsa-key-generation-issue/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Infineon RSA Key Generation Issue</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.cryptographyengineering.com/2017/10/16/falling-through-the-kracks/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Falling through the KRACKs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.cbc.ca/news/business/bombardier-airbus-c-series-1.4357567', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Europe's Airbus to take majority stake in Bombardier CSeries program</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.eso.org/public/news/eso1733/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">ESO Telescopes Observe First Light from Gravitational Wave Source</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/15/world/asia/north-korea-hacking-cyber-sony.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The World Once Laughed at North Korean Cyberpower. No More.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://elaineou.com/2017/10/14/the-transaction-costs-of-tokenizing-everything/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Transaction Costs of Tokenizing Everything</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.seattletimes.com/business/self-driving-car-accidents-robot-drivers-are-odd-and-thats-why-they-get-hit/?utm_content=buffer0acdd&utm_medium=social&utm_source=twitter&utm_campaign=owned_buffer_tw_m', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Robot drivers are ‘odd, and that’s why they get hit’</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://zwischenzugs.wordpress.com/2017/10/15/my-20-year-experience-of-software-development-methodologies/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">My 20-Year Experience of Software Development Methodologies</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.michaelburge.us/2017/10/15/haskell-typeclasses-vs-cpp-classes.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Haskell Typeclasses vs. C++ Classes</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://marco.org/2017/10/14/impossible-dream-of-usb-c', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The impossible dream of USB-C – Marco.org</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/13/world/asia/china-science-fraud-scandals.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Fraud Scandals Sap China’s Dream of Becoming a Science Superpower</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/14/us/union-jobs-mexico-rexnord.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Becoming a Steelworker Liberated Her. Then Her Job Moved to Mexico.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://girinstud.io/news/2017/10/call-for-help-fund-gimp-development-libre-animation/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">fund GIMP development and Libre animation</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/13/science/wolves-dogs-genetics.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Wolf Puppies Are Adorable. Then Comes the Call of the Wild.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.troyhunt.com/what-would-it-look-like-if-we-put-warnings-on-iot-devices-like-we-do-cigarette-packets/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">What Would It Look Like If We Put Warnings on IoT Devices Like We Do Cigarette Packets?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.bloomberg.com/news/articles/2017-10-13/twitter-is-crawling-with-bots-and-lacks-incentive-to-expel-them', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Twitter Is Crawling With Bots and Lacks Incentive to Expel Them</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://intelligence.org/2017/10/13/fire-alarm/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">There's No Fire Alarm for Artificial General Intelligence</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theguardian.com/news/2017/oct/13/the-scientists-persuading-terrorists-to-spill-their-secrets', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The scientists persuading terrorists to spill their secrets</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://ben-evans.com/benedictevans/2017/10/12/scale-wetxp', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The scale of tech winners</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.mercurynews.com/2017/10/13/4819750/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Tesla fires hundreds after company-wide performance reviews</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/interactive/2017/10/13/opinion/sunday/Silicon-Valley-Is-Not-Your-Friend.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Silicon Valley Is Not Your Friend</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://puri.sm/posts/purism-collaborates-with-cryptocurrency-monero-to-enable-mobile-payments/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Purism</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://marijnhaverbeke.nl/blog/prosemirror-1.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">ProseMirror 1.0</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://autoriteitpersoonsgegevens.nl/en/news/dutch-dpa-microsoft-breaches-data-protection-law-windows-10', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Microsoft breaches data protection law with Windows 10</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.youtube.com/watch?v=dCuZkaaou0Q', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Invited Talk</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.stochasticlifestyle.com/like-julia-scales-productive-insights-julia-developer/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">I Like Julia Because It Scales and Is Productive&#58; Some Insights From A Julia Developer</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.practicallyefficient.com/2017/10/13/from-boiling-lead-and-black-art.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">An essay on the history of mathematical typography</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arstechnica.com/cars/2017/10/5-things-we-learned-from-waymos-big-self-driving-car-report/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">5 things we learned from Waymo’s big self-driving car report</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theguardian.com/global-development/2017/oct/12/yemen-cholera-outbreak-worst-in-history-1-million-cases-by-end-of-year', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Yemen's cholera outbreak now the worst in history as millionth case looms</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://qz.com/1100221/the-worlds-first-negative-emissions-plant-has-opened-in-iceland-turning-carbon-dioxide-into-stone/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">World’s first “negative emissions” plant turns carbon dioxide into stone</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.bbc.com/news/world-europe-41567391', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Why did Vikings have 'Allah' on clothes?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.wallaroolabs.com/2017/10/go-python-go-stream-processing-for-python/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Wallaroo Labs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://blog.ycombinator.com/the-hidden-forces-behind-toutiao-chinas-content-king/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Hidden Forces Behind Toutiao</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/12/technology/tech-giants-threats.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Tech Giants, Once Seen as Saviors, Are Now Viewed as Threats</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.bbc.com/capital/story/20171011-is-there-an-upside-to-having-no-social-life', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Is there an upside to having no social life?</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://aws.amazon.com/blogs/aws/introducing-gluon-a-new-library-for-machine-learning-from-aws-and-microsoft/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Introducing Gluon&#58; a new library for machine learning from AWS and Microsoft</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://mtlynch.io/human-code-reviews-1/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">How to Do Code Reviews Like a Human (Part One)</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.recode.net/2017/10/12/16464132/google-target-retailers-amazon-walmart-assistant-alexa-home-echo-augmented-reality', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Google is essentially building an anti-Amazon alliance, and Target is the latest to join</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.bloomberg.com/news/articles/2017-10-12/google-has-made-a-mess-of-robotics', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Google Has Made a Mess of Robotics</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://githubengineering.com/evolution-of-our-data-centers/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Evolution of GitHub’s data centers</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://arstechnica.com/information-technology/2017/10/equifax-website-hacked-again-this-time-to-redirect-to-fake-flash-update/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Equifax website borked again, this time to redirect to fake Flash update</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.vanityfair.com/news/2017/10/early-facebook-employees-regret-the-monster-they-created', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Early Facebook Employees Regret the Monster They Created</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.adguard.com/en/crypto-mining-fever/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Cryptocurrency mining affects over 500 million people. And they have no idea it is happening.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.cockroachlabs.com/blog/cockroachdb-1dot1/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">CockroachDB 1.1 Released</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Byzantium HF Announcement</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://blog.atom.io/2017/10/12/atoms-new-buffer-implementation.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Atom’s new concurrency-friendly buffer implementation</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.mattwarren.org/2017/10/12/Analysing-C-code-on-GitHub-with-BigQuery/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Analysing C# code on GitHub with BigQuery</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.statnews.com/2017/10/12/michael-laufer-drug-prices/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">An anarchist takes on Big Pharma — by promoting DIY prescription drugs</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.youtube.com/watch?v=2V1FtfBDsLU', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">10 Years of Clojure</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.2ndquadrant.com/postgresql-better-mysql-1/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Why PostgreSQL is better than MySQL</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.eso.org/public/announcements/ann17071/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Press Conference at ESO HQ Announcing Unprecedented Discovery</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://blog.datacircle.io/2017/10/11/setting-up-company-in-berlin/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">How to Setup a Company in Germany for English Speaking People.</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://mesosphere.com/blog/containers-distributed-systems/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Containers and Distributed Systems&#58; Where They Came From and Where They’re Going</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theatlantic.com/video/index/542499/marshall-curry-nazi-rally-madison-square-garden-1939/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">When 20,000 American Nazis Descended Upon New York City</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://kate.io/blog/git-bomb/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Exploding Git Repositories – Kate Murphy</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.eff.org/deeplinks/2017/10/deputy-attorney-general-rosensteins-responsible-encryption-demand-bad-and-he', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Deputy Attorney General Rosenstein’s “Responsible Encryption” Demand is Bad and He Should Feel Bad</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.nytimes.com/2017/10/10/travel/747-airplane-jet-pilot.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">As the 747 Begins Its Final Approach, a Pilot Takes a Flight Down Memory Lane</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.spiegel.de/international/business/airbus-corruption-scandal-threatens-ceo-tom-enders-a-1171533.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Exploring the 'Bullshit Castle'&#58; Airbus Corruption Scandal May Lead Straight to the Top</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://movingpackets.net/2017/10/06/misinterpreting-traceroute/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Traceroute Lies! A Typical Misinterpretation Of Output</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://paranoidbeavers.ca/rev-proxy-grapher.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Reverse Proxy Grapher</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.newscientist.com/article/mg23631462-700-the-real-roots-of-early-city-states-may-rip-up-the-textbooks/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The real roots of early city states may rip up the textbooks</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://digitalnk.com/blog/2017/09/30/gender-distribution-in-north-korean-posters/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Gender Distribution in North Korean Posters – Digital NK</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://www.michaelburge.us/2017/09/27/delta-debugging-in-haskell.html', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Debugging C with Haskell's Divisible</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://allyouneedisbackend.com/blog/2017/09/24/the-sql-i-love-part-1-scanning-large-table/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The SQL I Love <3. Efficient pagination of a table with 100M records</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://martinmelhus.com/web-audio-modem/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Web Audio Modem</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.cbsnews.com/news/meet-a-convicted-felon-who-became-a-georgetown-law-professor/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Meet a convicted felon who became a Georgetown law professor</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://winterflower.github.io/2017/08/17/software-engineering-notebook/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">the software engineering notebook</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://0x10f8.wordpress.com/2017/08/07/reverse-engineering-an-eclipse-plugin/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Reverse Engineering an Eclipse Plugin</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.eater.com/2017/7/25/16019906/tokyo-tsukiji-toyosu-olympics-delay', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Toxic Saga of the World’s Greatest Fish Market</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://yakking.branchable.com/posts/what-and-why-nix/', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">What is Nix and Why you should try it!</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('http://250bpm.com/blog:50', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">Finish your stuff</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.theatlantic.com/technology/archive/2013/06/skinner-marketing-were-the-rats-and-facebook-likes-are-the-reward/276613/?single_page=true', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">We're the Rats, and Facebook Likes Are the Reward</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.youtube.com/watch?v=oSCX78-8-q0', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The World's Smallest Movie</a>
+  </div>
+  
+
+  <div class="post_title">
+    <a onclick="window.open('https://www.gwern.net/Tanks', '_blank')" onmouseover="" style="cursor: pointer; cursor: hand;">The Neural Net Tank Urban Legend</a>
+  </div>
+  
+</div>
+        </div>
+
+        <div class="nine columns" style="z-index:100;">
+          <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article_header">
+    <h1 class="post_title" itemprop="name headline">A digital logic simulator</h1>
+    <time class="post_date">22 October 2017, Sunday</time>
+    <a class="post_date"> - 2 min read</a>
+    <div class="issues" style="float: right">
+      <a class="github-button" href="https://github.com/hieuhtr/Blog/issues" data-show-count="true" aria-label="Issue hieuhtr/Blog on GitHub">Explore</a>
+    </div>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    <p>Dear BOOLR users,  Last year we wanted to make a working computer in a simulator for a school project.  We had learned something about digital logic, and we planned to build a computer in a digital logic simulator.  We had tried many simulators, but we couldn’t find what we were looking for. That’s why we decided to make our own simulator, BOOLR, with electron and JavaScript.  Because we were quite new to programming, it was quite buggy and slow, but it was much better looking and easier to use than other simulators.  Now, one year later, we have gained much more programming experience and we decided to start building a second version that is stable and fast enough for professional use.  We are really excited for this project.  We have huge plans and it will take a lot of time, but we hope we can make a lot of people happy with it and help people learn more about digital electronics.  If you have any suggestion for new features or changes, please do not hesitate to contact us on GitHub…</p>
+
+<p><img src="data:image/png;base64,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4MGDVapUKV29elVVq1bVnDlz5Ofnp7lz56pixYoaMGCAihUrpu+//1779u1T+/bt5e7urpCQED3yyCOqXLmyoqKizO3WrFlTMTExOnbsmBo0aCBPT0+NHj1aISEhqlKligYNGqQbN26keTKYXgyS9N9//2nWrFkKDQ1VyZIlNWTIEH300UcaPny4JGnAgAHq1q2b5s2bp9OnT+vxxx/XW2+9ZfyDmgM0atRIJUqU0KpVq/Too49q+fLl8vT0TDGKyWQyaebMmYqNjVWnTp00d+5cdejQwfy+On78eNWsWVM//PCDwsPD1aVLFy1ZskSvv/66wsPDMxzPqVOn9Pnnn0uSxXGS11y4cEENGzbU8uXLUx1VlXxcb9++XQsXLpTJZDInBzw9PVW6dGl9/vnniomJMZ8k9ujRQ7169dK0adP0zz//qGPHjpo2bZq8vb0VFham6tWr6/vvv9eiRYv03XffqVatWvr0008VGhqqnTt3ytHRUV5eXlq6dKl27NihkiVLasCAAfryyy/NJwFfffWVgoKCNGTIECUlJalo0aIWcV+9elWLFi1SYmKiOnbsqK+++kqtWrXS9evXVbhwYc2fP18REREaPXq0ChUqpAEDBqhy5coppn507txZksxT9t599109/fTTGjNmjK5fv66KFSvm6dESa9euVZMmTVSvXj2L1Y1efvllbdmyRdHR0XJ2dtbcuXN14sQJDR06VG5ubho2bJgSExM1depUOTo66uWXX9Yvv/yiP//8U87Ozjp37lymHssuXbrogw8+0IIFC3T8+HG98MILmjZtmt577z399ddfkqTatWsrODhYEydOlJOTkzp16mTxvKfmQcfJ/dI75latWqWVK1dKknmp6PTej9J6bHbv3q1GjRpZtF+rVi35+fll8JnLO3bt2qU9e/aoXbt2mj9/vqT0j4e9e/dajMD19PSUyWRS9erVzcm8GjVq6OjRo4qNjdXjjz+u4sWLa/To0UpKSpKXl5cGDRqkwMBA7dy5M9W4MnJMBgQE6KuvvlJkZKSefPJJDRkyRP/++685uTV16lQ99thj+u6773Tt2rVURw3fz9nZWQsXLtTVq1fVqFEjffHFF4qPjzePmMvIZ+DWrVu1fft23blzRy1atNCYMWMUEBCgc+fO6bHHHtNzzz2ncePGKSgoSMWLF1dUVJSeffZZffPNN/L1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JkMjoMuWLav69eurQIECevXVV1W7dm0NHDhQUsY+AwMCAtSpUyd16dJFR48elclkytDU5GnTpmnhwoWaMmWKfHx8FBUVleKz82Hel2F79jf+9CEkzz29173z8SMjI7Vhw4YUWe1Ro0YpMjIyQ1MBmjZtqmHDhqW4fe3atRaZ7+XLl1ucFL9rzbEAACAASURBVEl3EwfXrl3Tjz/+mG4/FStW1JQpU1LMpztz5kyKQlw5xQcffECxkTwqNjZW165d04cffqikpCTdunVL586d07x58/Trr79aZKxPnjypfv366cMPP9S3336riIgIzZkzx6LAj3R3KGu9evXMV6/i4uLk5+en5s2bZ3rN+TVr1qhBgwb64IMPtHv37gzFMHToUH344YeaPHmynJycdPPmTZ0+fdq8/eeff1ZERIR69eqljh076vbt2woJCcnThcbatGmjgICAFCf/0t15jBEREWrXrp3Gjh0rf39/NW3aVK+//rri4uK0f/9+ffzxxxYVu4cPH65Bgwbp/fffV+HChXX06FH17NnTfOUlLi5O7777rj755BN9+eWXku6OCri3fsPmzZtVvXp1DRgwQElJSTpx4kSeTAAULFhQYWFh6tq1q9zd3RUXF6crV67o66+/1ooVKyTd/ULZr18/ffDBBxo/frzi4+O1d+/eB1Yjnzdvnm7cuKGuXbuqS5cuioyM1NmzZ80JgEOHDql///567733NG7cON25c0eXL1/Wzp07M3QyXaRIETVu3FjvvPOO8uXLp6tXr2r8+PEKCAjI0N8dFRWl3r176+OPP9a4ceOUkJCgLVu2aOrUqeYr1v/++6++/vprvfPOO2rZsqUuXbqk3bt3q1atWmrWrJkKFy6ssLAwrV69Wr/88kuG+s3Nzp49q71796p27dop/t6bN2+qe/fuGjp0qIYNGyZHR0eFhISYVz9JS2Yey59++klRUVHmaQLJlcbvLUBppPSOuR9++EGPPvqoxo4dq1u3bunXX3/Vnj170n0/Ss+yZcu0cOFCrV+/Pk+vRiJJERERunXrlmbPnq2EhARdv35dp0+f1ogRI1JchMrI8RATE6ONGzeqVatW2r59u6S7F+2Cg4P133//6dKlS5mKb86cORoxYoS6du2qsWPHphvD5cuXNXLkSL399ttq1aqVkpKSFB4erj/++MPc5vDhw/X222+ra9eu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tGnTFBkZaetwDBMVFaVZs2apU6dO2rVrl63DsZlLly5p0KBB+vjjj3PtcP+MSEpK0vr169WpUyctWbJECQkJtg4JyHEuXryooUOH6qOPPlJwcLCtwwGQw5AAAGD3rl27poEDB2ru3Lm2DuWhRUREaPTo0Ro4cKAuXbpk63CsJjg4WB988IGGDx+ua9eu2Tocq4mPj9eCBQvUuXNn7d2719bhWE1MTIy+++479ejRQ6dOnbJ1OECOtH37dnXu3Fm+vr62DgVADkICAAB098rirFmzNGbMGMXHx9s6nCzZs2ePunTpYl4yyh75+fmpS5cu2rlzp61DMdylS5f09ttv6/vvv9edO3dsHY5NnDlzRr169dL8+fOVmJho63CAHCcqKkqff/65RowYkadHgwHIOBIAAHCPdevWaejQobp9+7atQ8mwO3fu6LvvvtPgwYMVFhZm63Bs7vr16xoyZIi+/vrrPFX34F7r169Xt27ddPLkSVuHYnMJCQmaOXOmBgwYoJCQEFuHA+RImzZtUq9evXTx4kVbhwLAxkgAAMB9du3apU8++SRXjAQICwtT//79tWTJEluHkuOsWLFCb7/9dp46KYyLi9O4ceM0evRoRUVF2TqcHOXgwYN68803dfjwYVuHAuRIFy5cUM+ePfNczRsAmUMCAABSsWvXLn355ZdKSsq5K6UGBASoR48eOnbsmK1DybECAgLUs2dPnThxwtahPLSIiAgNGjRIPj4+tg4lx7p+/boGDhzIEqhAGiIjI/Xee+/pzz//tHUoAGyEBAAApGH9+vWaM2eOrcNI1fbt29WnT588dXXbKNeuXVPfvn21ZcsWW4eSZRcvXlTPnj116NAhW4eS48XFxenLL7/Ud999Z+tQgBwpLi5On3zyidatW2frUADYAAkAAHiAOXPm5Ljq6hs2bNDHH3+cq+oU2NqdO3f06aefau3atbYOJdP+/vtv9enTR//++6+tQ8lVlixZoi+//JLigEAqEhMT9fnnn2vz5s22DgWAlZEAAIAHSEpK0siRI3PM0nKrVq3SqFGjWP88CxITE/XFF19o2bJltg4lw44dO6a+ffsqPDzc1qHkSmvWrNGIESMUFxdn61CAHCcpKUmfffaZdu3aZetQAFgRCQAASEdERIS++eYbW4ehVatW6auvvrJ1GLnet99+q59//tnWYaTr5MmTevfdd1m66yH5+flp5MiRJM2AVMTHx2v48OH6+++/bR0KACshAQAAGeDn56fdu3fbrP+NGzdq4sSJNus/r/nmm29y9HSAwMBAvfvuu1T6zyZ//PGHxo4dm6OLegK2EhMToyFDhjDSCLATJAAAIIO+/vprmywNuHPnTo0ePZqTl2w2duzYHFkJ+8qVKxo8eLBu3rxp61DyFF9fX3377be2DgPIkYKDgzVixAg+ZwA7QAIAADLo8uXLWr9+vVX7PHv2rD799FOGLxsgMTFRo0aN0qlTp2wdillkZKSGDBmSY2pO5DU///yzVq1aZeswgBxp//79WrRoka3DAGAwEgAAkAnz58+32iiA8PBwffjhh4qJibFKf/YoNjZWw4YNyxEn3MkJifPnz9s6lDxt0qRJ2r9/v63DAHKkWbNm6cyZM7YOA4CB8ts6AADITa5cuaItW7bolVdeMbSf+Ph4DRs2TMHBwYb2k1UlSpRQuXLlVKFCBZUuXVpFihRRoUKFVLhwYZlMJkVFRSkmJkZRUVG6cuWKgoKCdPHiRYWFhdk69BRCQkI0bNgw/fjjj3J0dLRZHDNmzMix1bidnZ1Vrlw580/RokVVqFAhFSpUSI6OjoqJiVF0dLSio6MVEhKiS5cu6cKFCwoODs5xy/AlJCTok08+0ZIlS1S6dGlbhwPkKPHx8Ro3bpwWLlwoBweuEwJ5EQkAAMgkHx8fwxMAP/zwg44ePWpoH5nx2GOPqX79+qpbt67q1asnV1fXLLUTFham/fv368CBA9q7d6+uXr2azZFmzfHjxzVz5ky9//77Nunf399fixcvtknfqXnkkUdUr1498/Ndvnz5LLUTFRWlw4cP6+DBg9q/f78CAgKyOdKsuXHjhkaOHKkff/xR+fPzVQi416lTp7RixQp16dLF1qEAMACfegAyxc3NTW+88Yatw1BiYqLCw8MVGhqqgwcPWrV68cGDB3X16lWVKlXKkPb37duXI04GnZ2d1aJFC7Vu3Vo1atTIljZLlCihV155xZxAOXLkiNavXy8/Pz/dunUrW/rIqiVLlqhBgwZ69tlnrdpvWFiYxowZY9U+U5M/f341bNhQrVu3VqNGjbJlNESRIkXUqFEjNWrUSJJ06dIlrVu3Tr///rvNkz/Hjh3Tjz/+qIEDB9o0DuR8Xbp00dChQw1pOzY2VjExMbpx44YuXryo8+fP69ChQzpy5IhNVwGZPXu2WrZsqaJFi9osBgDGIAEAIFOKFSumHj162DoMC0lJSTp+/LgWL16sbdu2WaXP33//XW+//Xa2t3v9+nV99tlnNq3E7OHhobfeektt2rSRk5OToX15enrK09NTQ4cO1dq1a7Vo0SKbTnsYPXq0fvnlFxUrVsxqfY4ZM0YRERFW6+9+RYoUUceOHdW1a9csj+zIqLJly2rAgAHq37+//P39NW/ePB0/ftzQPh9kwYIF8vLykqenp81igH1zcnKSk5OTihUrpvLly+v5559Xz549defOHe3atUtr1661ydSgyMhILViwwGajogAYh8k9AHI9k8mkGjVqaPLkyZo3b548PDwM73PPnj2GtDtlyhSbFaTz8PDQqFGj5OPjow4dOhh+8n8vJycndezYUT4+Pho1apRVnsPUhIWF6bvvvrNaf76+vvrrr7+s1t+9ChYsqD59+sjX11eDBw82/OT/XiaTSY0aNdKCBQs0c+bMbBthkllJSUkaO3as7ty5Y5P+gbQUKFBAzZo109SpU7V8+XI1b97c6jH88ssvCg0NtXq/AIxFAgBAnlKzZk0tXrxYTz/9tKH9nDhxItur8+/bt8/qywxKd4d+9+jRQytWrNBrr71m00J4jo6Oeu2117RixQr17NnTJvOzfX19deDAAcP7CQ8P19SpUw3vJzWNGzfWqlWr1L9/f5sP8a1fv77mzZunzz77zKojL5JduHBBCxcutHq/QEZVqVJFEyZM0I8//qhKlSpZrd87d+5o+fLlVusPgHWQAACQ57i6umrKlCmGVviOi4vTkSNHsq292NhYjR8/Ptvay6innnpKy5Yt03vvvafChQtbvf+0FC5cWO+++65+/vlnPfXUU1bvf/z48YZfFZ4yZYpu3LhhaB/3K168uKZOnapvvvnGZqMsUmMymdS2bVv99ttvatmypdX7X7BggYKCgqzeL5AZtWvX1pIlS+Tt7W21Pn/99VdFRkZarT8AxiMBACBPcnV11VdffWVoH4GBgdnW1vLly3X58uVsay8jOnfurHnz5ln1ilJmVaxYUfPmzbN6NeqLFy/q119/Naz9EydOaMOGDYa1n5q6devq559/Nhfky4mKFi2qL774QqNHj1bBggWt1m9cXJymTZtmtf6ArHJyctKIESM0fPhwmUwmw/u7deuW1d+rABiLBACA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ziw2APfUC3QDACCYTJo0Sc8884w8Ho/jsa0GhFYr3dcFVsWR4uLi276G/nafZTHMqj8Bp7zyyisqKyszi9+zZ0+z2ADcwwwAALjFli1blJqaGuhm+MXyA1+o8/l8gW4CXER/I1xlZGRo165dZvG9Xq969+5tFh+AeygAAMAt8vLytGTJEs2dO9fxKb9WK7cXFBSYxK0LrLZNTfrSqr/z8/NN4tYFlseCE08CASxcunRJixcvNs3Rq1cvbj8C6ggKAABQiR07digxMdHRldytBhAMCKuWl5dnErcmfWnV31b/p7rA8lho2LChWWygtkpKSjR//nzzR1UOGjTIND4A91AAAIAqHDhwQLNmzXJs9W+rAcSNGzdM4tYFgSwA0N/us9w2VjM6gDuxePFi7dmzxzSH1+vVkCFDTHMAcA8FAACoxr59+/TCCy84EqtJkyaOxKno1KlTJnHrAqttc/fdd9/2NVb9bfWM77rAqr8bNGjADAAEFZ/PpyVLlujNN980zzVgwIAanfMAhAYKAABwG1u2bFFaWtodx4mOjnagNZ938uRJk7h1wYkTJ0zi1qQvrfr7/PnzPJO+CoHsb8At+fn5Sk5O1ubNm13J9+1vf9uVPADcQQEAAGrgV7/61R0PtK0GEf/9739N4oY6n89nVhypSV82b97cJHdZWRlFnyr873//M4lr1ZeAv44ePaopU6Zo586druSLjY1V//79XckFwB0UAACgBgoKCvSb3/zmjmJYDSKuXbums2fPmsQOZTk5OWbPbm/RosVtX2N51fjDDz80ix2qysrKdOTIEZPYFAAQaAUFBXrllVc0efJkV4u+EydOlMfjcS0fAHsUAACghtLT05WZmVnr97dr187B1nxWVlaWWexQlZ2dbRa7Jn1p2d+W/7dQdezYMV25csUkdkxMjElc4Hby8vK0fv16jRkzRuvWrVNJSYlruVu3bq2RI0e6lg+AO+oFugEAEEpeeuklDRgwoFZXRDp27GjQoo9lZWVp1KhRZvFDkWVRpEOHDrd9zd13363o6GiTx3NRAPg8y/62PHaBigoLC7Vv3z699dZbevvttwP26M+nnnpKXq83ILkB2KEAAAB+yMnJUWZmpuLj4/1+73333af69eubTEvfu3evfD6fIiKY2CVJRUVF+uCDD0xilw/sa6JDhw4mBYDz588rJyenRoWIcPH++++bxaYAEN7OnDmj9PR0k9jFxcXKz8/X1atXdeLECeXk5Ojw4cNmty/VVKdOnTRixIiAtgGADQoAAPzSuXNnbdy4MdDNUElJiXJzc3XhwgVlZWVp586drt0XvXHjxloVACIjI9WhQwf961//crxNubm52rNnD4s1/b/09HSzZ8J36tSpxq/t3Lmz9u7da9KOtLQ0Pf300yaxQ035/m/B6/Xq/vvvN4mN0LB7927t3r070M1wVVJSkiIjIwPdDAAGuFQEICTVq1dPLVu2VI8ePTRt2jS9+uqrWr58ubp27Wqee8+ePbVehKlHjx4Ot+ZTbjwPOlRs3brVLHZcXFyNX2vZ39u2bZPP5zOLH0rS0tJUWlpqErt79+5Mg0ZYGT58uHr16hXoZgAwQgEAQJ3Rt29frVu3TuPHjzfPVdtHMH3pS19yuCWfeuedd3T9+nWz+KEiNzdX7733nln8hx9+2OS1/jp//rzptPdQYln8sjxmgWDTvHlzzZkzJ9DNAGCIAgCAOqVevXqaN2+eZsyYYZqnttNBLQeEhYWF2rRpk1n8UJGSkmJ2NTgyMlIPPfRQjV9/7733mk4f37Bhg1nsUJGZman//Oc/ZvEpACCc/PSnP1WTJk0C3QwAhigAAKiTEhISNGTIELP4Bw8eVG5urt/vi46ONl24LSUlJWArRgeDq1evavPmzWbxu3fvrrvuusuv9/Tp08eoNR8v/njgwAGz+KFg9erVZrG9Xq9ft3wAoWzq1Km1Wt8GQGihAACgzvrxj3+sqKgos/iHDh2q1fsGDhzocEs+ZT0ADnbWBZCvfe1rrrzHH6tWrTKNH8yysrJMCyB9+vRR48aNzeIDwaJPnz5KTEwMdDMAuIACAIA6q0mTJpoyZYpZ/H//+9+1et8jjzzicEs+a+3atbWanRDqzp49q5SUFNMcgwYN8vs9vXv3Ni1Evfvuu6ZrHgSr0tJS/fa3vzXNYV28AYJBbGysli5dymNkgTDBkQ6gThs1apRZ7No+zq9bt25q2bKlw6351I0bN7Rs2TKz+MHqhRdeUEFBgVn82NjYWt3P7/V6zafVLl26VIWFhaY5gs2mTZtqXYSrKQoAqOuio6P18ssvc98/EEYoAACo06Kjo9W9e3eT2KdPn67V+zwej775zW863JrP2rZtm7Kzs01zBJOMjAzt2rXLNMfQoUNr/d5hw4Y52JLPO3XqlNatW2eaI5h89NFHWrFihWmOPn36KDo62jQHEEj33nuvfve736lVq1aBbgoAF1EAAFDnde3a1STunTxyb/To0Q62pHLPPfecrl27Zp4n0C5duqTFixeb5vB4PHr00Udr/f7+/furRYsWDrbo89auXRsWCwL6fD4tXLjQfLFLN45RIFCaNWumFStWqGPHjoFuCgCX1XM6YFlZmdMhAQSZUDvOmzVrZhL3+vXrtd4W999/v+Li4rR//36HW/Wpc+fO6bnnntOLL75oliPQysrKtGDBAl28eNE0T79+/dSqVata93dERIRGjBihNWvWONyyT5WUlOgnP/mJXnvttTo9nXfNmjXau3evaY6oqCgNGjTIkXOd5fmyrKws5M7HCLyYmBi99NJLiomJYf8BwhAzAADUeQ0bNjSJe6f3XLtxhXH37t1av369eZ5AWb16td5//33zPE701ahRo+TxeBxoTdXOnTunhQsXyufzmeYJlKysLP3+9783zzN8+HA1aNDAPA/gtri4OK1Zs0YxMTGBbgqAAKEAAKDOu3z5skncRo0a3dH7hw4daj4tXJJefvll/e1vfzPP47atW7dq5cqV5nnatm1bq9X/K4szePBgB1pUvYyMDC1dutQ8j9uOHj2quXPnmhc3PB6PJkyYYJoDCITx48dr+fLlatq0aaCbAiCAKAAAqPMuXLhgEvdOnw9ev359PfbYYw61pno///nP69Sj4jIyMvTLX/7SlVzf+973FBkZ6UisyZMnOxLndl5//XVXiiNuOXPmjGbOnKkbN26Y5xo8eDBXR1GnREVFadGiRUpOTlb9+vUD3RwAAXbHBYDy+8+4Dw1AMPL5fGb3C99pAUCSxo4da/qM+HIlJSWaO3euMjIyzHNZy8jI0Lx581RaWmqeq2nTpho5cqRj8bp3765evXo5Fq86q1at0qpVq1zJZenkyZNKTEw0X+ehnFtFGsAN/fr108aNG82fRAIgdPi9CGBNB/kUA4DAsl54KlTs37/f7BaAO1kUrlxUVJQef/xxV67W3rx5U3PmzNGCBQv0rW99yzyfhbS0NC1atMiVwb/08WCwYcOGju7zM2bM0PTp0x2LV52VK1fq4sWLSkpKUkRE6E36O3LkiJ555hldunTJlXzx8fHq1q2bo/1tfb4MpfMx3NW4cWP9+te/VoMGDdhPAHzCrwLA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" alt="" />
+<!--description--></p>
+
+    <div id="gitment-container"></div>
+  </div>
+
+  <footer class="article-footer">
+
+  <hr/>
+
+  <section class="author">
+  <div class="authorimage box" style="background: url(/assets/img/avatar.jpg)"></div>
+  <div class="authorinfo box">
+    <p class="bio" style="color: #222">
+      I'm an engineer who likes learning, discussing, and solving problems. These days, I'm focusing on DevOps because I'd love to help ensure that services stay up and running, while continuing to ship software to customers rapidly. I also have a passion for building robust infrastructure at world scale. 
+    </p>
+    <a class="github-button" href="https://github.com/hieuhtr" data-size="large" data-show-count="true" aria-label="Follow @hieuhtr on GitHub">Follow @hieuhtr</a>
+  </div>
+  <hr style="border-top: 0px"></<hr>
+  <div class="calendar"></div>
+</section>
+<script>
+  GitHubCalendar(".calendar", "hieuhtr");
+</script>
+
+  </footer>
+
+  
+
+</article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script async data-cfasync="false" src="https://pepper.swat.io/embed.js?eyJwb3NpdGlvbiI6ImxlZnQiLCJjb2xvciI6ImU0NzkxMSIsImN1c3RvbUNvbG9yIjp0cnVlLCJpY29uIjoicGFjbWFuIiwicHJvbm91biI6Im1lIiwibGFuZ3VhZ2UiOiJlbiIsImJyYW5kZWQiOmZhbHNlLCJpbnRyb1RleHQiOm51bGwsImNoYW5uZWxzIjpbWyJ0ZWxlZ3JhbSIsImhpZXVodHIiLCJzb2NpYWwiXSxbInNreXBlIiwiaHV5bmh0cnVuZ2hpZXUuY3NAb3V0bG9vay5jb20iLCJzb2NpYWwiXSxbIm1lc3NlbmdlciIsImh1eW5odHJ1bmdoaWV1LmNzIiwic29jaWFsIl0sWyJlbWFpbCIsImh1eW5odHJ1bmdoaWV1LmNzQGdtYWlsLmNvbSIsImNsYXNzaWMiXV19"></script>
+  </body>
+</html>

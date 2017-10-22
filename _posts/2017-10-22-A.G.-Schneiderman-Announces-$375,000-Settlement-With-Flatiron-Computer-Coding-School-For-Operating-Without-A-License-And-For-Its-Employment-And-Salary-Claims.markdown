@@ -1,0 +1,14 @@
+---
+layout: post
+title: A.G. Schneiderman Announces $375,000 Settlement With Flatiron Computer Coding School For Operating Without A License And For Its Employment And Salary Claims
+source: https://ag.ny.gov/press-release/ag-schneiderman-announces-375000-settlement-flatiron-computer-coding-school-operating
+category: HackerNews
+description: SiteLog - News from Attorney General Eric T. Schneiderman  FOR IMMEDIATE RELEASEOctober 13, 2017 Attorney General’s Press Office / 212-416-8060nyag.pressoffice@ag.ny.govT
+numwords: 659
+hnscore: 
+---
+
+A. G. SCHNEIDERMAN ANNOUNCES $375,000 SETTLEMENT WITH FLATIRON COMPUTER CODING SCHOOL FOR OPERATING WITHOUT A LICENSE AND FOR ITS EMPLOYMENT AND SALARY CLAIMS  A. G. Schneiderman Encourages New Yorkers To Report Deceptive Conduct At For-Profit Schools To His Office  NEW YORK--Attorney General Eric T. Schneiderman today announced a $375,000 settlement with Flatiron School, Inc. (“Flatiron”), a New York city-based coding school that operated without a license from the New York State Education Department (“SED”) and improperly marketed and promoted its job placement rate and the average starting salary of its graduates. Today’s settlement follows a series of groundbreaking actions taken by the Attorney General’s Office hold for-profit colleges accountable and to provide relief to victimized students.  Under today’s agreement, Flatiron will pay $375,000 in restitution to eligible graduates who file complaints against the coding school with the Attorney General’s Office within three months ...
+
+![](https://ag.ny.gov/sites/default/files/styles/large/public/oag_seal.png)
+<!--description-->

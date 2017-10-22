@@ -1,0 +1,14 @@
+---
+layout: post
+title: Home
+source: http://www.crowdedcities.com
+category: HackerNews
+description: SiteLog - The Crowbar  Cigarette filters, you find them in the park next to you in the grass, in dirty ditches and under your shoes. What if we could find a way to colle
+numwords: 463
+hnscore: 
+---
+
+Cigarette filters, you find them in the park next to you in the grass, in dirty ditches and under your shoes. What if we could find a way to collect these butts from all corners of our city and precious parks? With crows, that have become perfectly adapted to city life, we can! By training crows to recognize and pick up cigarette filters we can solve this tenacious problem of city pollution. It is the Crowbar that does the training for us and gives out food as a reward. Want to know more? Please scroll down!  In the Netherlands every year more than 6 billion cigarette filters are tossed onto the street. It’s easy to toss, but it’s not easy to pick them up. Since each filter takes 12 years to degrade we realised it’s time to take action.  Through observation we concluded crows are the smartest around us to reach any spot in the city. What if crows can bring cigarette filters to one of our Crowbars to exchange the filter for food? This is how our adventure started.  98 percent of cigaret...
+
+![](http://www.crowdedcities.com/wp-content/uploads/2017/08/Crows_Standing_4-e1501834716413.png)
+<!--description-->
