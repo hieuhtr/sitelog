@@ -13,7 +13,6 @@ title: SiteLog
         <h1 class="post_title"><a href="{{ post.source }}">{{ post.title}}</a></h2>
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
         <a class="post_date"> - {{ post.numwords | divided_by:180 | plus:1 }} min read</a>
-        <a class="post_date"> - {{ post.hnscore }} upvote</a>
       </header>
 
       <div class="post_excerpt" title="Read full article" onclick="window.open('{{ post.source }}', '_blank')" style="cursor: pointer;">
