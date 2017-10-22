@@ -3,10 +3,10 @@
   <channel>
     <title>The SiteLog</title>
     <description>Log extraordinary sites.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Oct 2017 23:41:29 +0700</pubDate>
-    <lastBuildDate>Sun, 22 Oct 2017 23:41:29 +0700</lastBuildDate>
+    <link>https://sitelog.llnx.me/</link>
+    <atom:link href="https://sitelog.llnx.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 22 Oct 2017 23:49:44 +0700</pubDate>
+    <lastBuildDate>Sun, 22 Oct 2017 23:49:44 +0700</lastBuildDate>
     <generator>Jekyll v3.5.1</generator>
     
       <item>
@@ -17,8 +17,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/zsync.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/zsync.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/zsync.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/zsync.html</guid>
         
         
         <category>HackerNews</category>
@@ -41,8 +41,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/qutebrowser.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/qutebrowser.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/qutebrowser.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/qutebrowser.html</guid>
         
         
         <category>HackerNews</category>
@@ -57,8 +57,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/p2p-social-networking-with-Rotonde-&-Beaker-Browser.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/p2p-social-networking-with-Rotonde-&-Beaker-Browser.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/p2p-social-networking-with-Rotonde-&-Beaker-Browser.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/p2p-social-networking-with-Rotonde-&-Beaker-Browser.html</guid>
         
         
         <category>HackerNews</category>
@@ -73,8 +73,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/extending-the-microservice-idea-to-frontend-development.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/extending-the-microservice-idea-to-frontend-development.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/extending-the-microservice-idea-to-frontend-development.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/extending-the-microservice-idea-to-frontend-development.html</guid>
         
         
         <category>HackerNews</category>
@@ -89,8 +89,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/congress-edits-(@congressedits).html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/congress-edits-(@congressedits).html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/congress-edits-(@congressedits).html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/congress-edits-(@congressedits).html</guid>
         
         
         <category>HackerNews</category>
@@ -105,8 +105,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/Working-at-Google-seemed-like-a-dream-job.-The-reality-has-been-a-tedious,-pointless-nightmare..html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/Working-at-Google-seemed-like-a-dream-job.-The-reality-has-been-a-tedious,-pointless-nightmare..html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/Working-at-Google-seemed-like-a-dream-job.-The-reality-has-been-a-tedious,-pointless-nightmare..html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/Working-at-Google-seemed-like-a-dream-job.-The-reality-has-been-a-tedious,-pointless-nightmare..html</guid>
         
         
         <category>HackerNews</category>
@@ -121,8 +121,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/Why-physicists-still-use-Fortran.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/Why-physicists-still-use-Fortran.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/Why-physicists-still-use-Fortran.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/Why-physicists-still-use-Fortran.html</guid>
         
         
         <category>HackerNews</category>
@@ -137,8 +137,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/Why-I-use-Object-Pascal.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/Why-I-use-Object-Pascal.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/Why-I-use-Object-Pascal.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/Why-I-use-Object-Pascal.html</guid>
         
         
         <category>HackerNews</category>
@@ -153,8 +153,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/Welcome-to-f.lux-v4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/Welcome-to-f.lux-v4.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/Welcome-to-f.lux-v4.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/Welcome-to-f.lux-v4.html</guid>
         
         
         <category>HackerNews</category>
@@ -169,8 +169,8 @@
 &lt;!--description--&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Oct 2017 00:00:00 +0700</pubDate>
-        <link>http://localhost:4000/hackernews/2017/10/22/Vulnerable-RSA-generation-(CVE-2017-15361)-CRoCS-wiki.html</link>
-        <guid isPermaLink="true">http://localhost:4000/hackernews/2017/10/22/Vulnerable-RSA-generation-(CVE-2017-15361)-CRoCS-wiki.html</guid>
+        <link>https://sitelog.llnx.me/hackernews/2017/10/22/Vulnerable-RSA-generation-(CVE-2017-15361)-CRoCS-wiki.html</link>
+        <guid isPermaLink="true">https://sitelog.llnx.me/hackernews/2017/10/22/Vulnerable-RSA-generation-(CVE-2017-15361)-CRoCS-wiki.html</guid>
         
         
         <category>HackerNews</category>
